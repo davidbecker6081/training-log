@@ -1,0 +1,89 @@
+// Import All of Bulma's Utilities
+// (variables, sass functions, mixins, etc)
+@import "~bulma/sass/_index.scss"
+@import "./mixins.sass"
+
+// Colors
+$primary: #0099ff
+$primary-invert: findColorInvert($primary)
+$primary-darkest: darken($primary, 37%)
+$primary-darker: darken($primary, 23%)
+$primary-dark: darken($primary, 16%)
+$primary-medium: darken($primary, 6%)
+$primary-light: lighten($primary, 30%)
+$primary-lighter: lighten($primary, 45%)
+$primary-lightest: lighten($primary, 48%)
+
+$danger-medium: lighten($danger, 30%)
+
+$warning-medium: lighten($warning, 23%)
+$warning-darker: darken($warning, 45%)
+
+$secondary: #ff5722
+$secondary-invert: findColorInvert($secondary)
+
+$yellow-light: rgba(255, 255, 0, 0.3)
+
+// Setup $colors to use as bulma classes (e.g. 'is-primary')
+// $colors: ( "white": ($white, $black), "black": ($black, $white), "grey": ($grey, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert, $primary-lighter, $primary-darker), "secondary": ($secondary, $secondary-invert), "info": ($info, $info-invert, $info-light, $info-dark), "success": ($success, $success-invert, $success-light, $success-dark), "warning": ($warning, $warning-invert, $warning-light, $warning-dark), "danger": ($danger, $danger-invert, $danger-light, $danger-dark) )
+
+// Button
+$button-padding-horizontal: 1em
+
+// Card
+$card-overflow: visible
+
+// Checkbox
+$checkbox-background-color: $white
+
+// Dropdown
+$dropdown-content-shadow: 0 2px 3px hsla(0,0%,4%,.1), 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02)
+
+// Footer
+$footer-background-color: transparent
+$footer-padding: 0
+
+// Links
+$link: $primary
+$link-invert: $primary-invert
+$link-focus-border: $primary
+
+// Menu
+$menu-item-hover-background-color: transparent
+$menu-item-hover-color: $primary
+
+// Modal
+$modal-content-width: 760px
+
+// Sidebar
+$sidebar-width: 275px
+
+// Shadows
+$floating-button-shadow: 0px 1px 2px 1px rgba(10, 10, 10, 0.2), 0px 1px 8px 5px rgba(10, 10, 10, 0.1)
+
+// Sizes
+$size-extra-extra-small: $size-small * 0.25
+$size-extra-small: $size-small * 0.5
+$size-extra-large: $size-large * 2
+
+// Switch
+$switch-active-background-color: $success
+
+// Table
+$table-cell-padding: 0.5em 1em
+$table-nesting-inset: 44px
+
+// Breakpoints
+$mobile: 420px
+
+$fullhd: 1550px + (2 * $gap) // allows the .container class to grow in width up to 1500px instead of the default 1344px
+
+// Dropdown
+$dropdown-item-active-color: $primary
+$dropdown-item-active-background-color: $primary-lighter
+
+
+// Navbar
+// duplicated from `node_modules/bulma/sass/components/navbar.sass`
+// so that we can use this variable in .vue files without importing that entire file separately
+$navbar-height: 3.25rem

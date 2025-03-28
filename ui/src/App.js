@@ -1,8 +1,8 @@
-import logo from './logo.svg';
-import './App.sass';
+import './styles/main.sass';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import { CustomDropzone } from './components/CustomDropzone';
+import { Button } from 'react-bulma-components';
 const API_URL = 'http://localhost:3000/api/v1';
 
 const getData = async () => {
@@ -38,27 +38,32 @@ function App() {
   , []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Workout Tracker</h1>
-      </header>
+    <div className="is-flex is-flex-direction-column is-align-items-center">
       {loading && <p>Loading...</p>}
       {error && <p>Error loading data: {error.message}</p>}
-      {workouts?.length && (
-        <div className="workouts">
-          {workouts.map(workout => (
-            <div key={workout.id} className="workout">
-              <h2>{workout.name}</h2>
-              <p>{workout.description}</p>
-              <p>Date: {new Date(workout.date).toLocaleDateString()}</p>
-            </div>
-          ))}
+
+      <Button color="primary"  className="mar-y-xl">
+        <CustomDropzone />
+      </Button>
+
+      {
+      workouts?.length && 
+        <div className="dist-y-xl">
+          {
+            workouts.map(workout => (
+              <div key={workout.id} className="">
+                <h2 className="has-text-primary is-size-4">{workout.name}</h2>
+                <p>{workout.description}</p>
+                <p>Date: {new Date(workout.date).toLocaleDateString()}</p>
+              </div>
+            ))
+          }
+        </div>
+      }
+
       {
         !workouts.length && <p>No workouts found.</p>
       }
-        </div>
-      )}
     </div>
   );
 }

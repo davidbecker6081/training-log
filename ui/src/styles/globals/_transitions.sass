@@ -1,0 +1,157 @@
+.fade-zoom-enter-active,
+.fade-zoom-leave-active
+  transition: 200ms
+.fade-zoom-enter,
+.fade-zoom-leave-to
+  transform: rotateY(9deg) scaleY(0.9)
+  opacity: 0
+
+.fade-hinge-enter-active,
+.fade-hinge-leave-active
+  transition: 250ms
+.fade-hinge-enter,
+.fade-hinge-leave-to
+  transform-origin: top
+  transform: scale(0.9) rotateX(55deg)
+  opacity: 0
+
+
+
+.fade-up-enter-active,
+.fade-up-leave-active
+  transition: 100ms
+.fade-up-enter,
+.fade-up-leave-to
+  transform: translateY(0.75rem)
+  opacity: 0
+
+
+
+.fade-down-enter-active,
+.fade-down-leave-active
+  transition: 100ms
+.fade-down-enter,
+.fade-down-leave-to
+  transform: translateY(-0.75rem)
+  opacity: 0
+
+.fade-down-slow-enter-active,
+.fade-down-slow-leave-active
+  transition: 200ms
+.fade-down-slow-enter,
+.fade-down-slow-leave-to
+  transform: translateY(-0.75rem)
+  opacity: 0
+
+
+
+.fade-left-enter-active,
+.fade-left-leave-active
+  transition: 100ms
+.fade-left-enter,
+.fade-left-leave-to
+  transform: translateX(0.75rem)
+  opacity: 0
+
+.fade-left-slow-enter-active,
+.fade-left-slow-leave-active
+  transition: 200ms
+.fade-left-slow-enter,
+.fade-left-slow-leave-to
+  transform: translateX(0.75rem)
+  opacity: 0
+
+
+
+.fade-right-enter-active,
+.fade-right-leave-active
+  transition: 100ms
+.fade-right-enter,
+.fade-right-leave-to
+  transform: translateX(-0.75rem)
+  opacity: 0
+
+.fade-right-slow-enter-active,
+.fade-right-slow-leave-active
+  transition: 200ms
+.fade-right-slow-enter,
+.fade-right-slow-leave-to
+  transform: translateX(-0.75rem)
+  opacity: 0
+
+
+
+.route-fade-enter-active
+  transition: 420ms
+.route-fade-leave-active
+  transition: 0ms
+  display: none
+.route-fade-enter,
+.route-fade-leave-to
+  opacity: 0
+
+
+
+.tab-change-enter-active
+  transition: 250ms, opacity 300ms
+.tab-change-leave-active
+  transition: 0ms
+  display: none
+.tab-change-enter,
+.tab-change-leave-to
+  transform: translateY(-0.5rem)
+  opacity: 0
+
+
+
+.tab-change-alt-enter-active
+  transition: transform 300ms, opacity 500ms
+.tab-change-alt-leave-active
+  transition: 0ms
+  display: none
+.tab-change-alt-enter,
+.tab-change-alt-leave-to
+  transform: translateY(-0.66rem)
+  opacity: 0
+
+
+.fade-zoom-between-enter-active,
+.fade-zoom-between-leave-active
+  transition: 250ms
+
+.fade-zoom-between-enter
+  transform: scale(1.05)
+  opacity: 0
+
+.fade-zoom-between-leave-to
+  transform: scale(0.9)
+  opacity: 0
+
+
+
+.list-slide-enter
+  opacity: 0
+.list-slide-enter-active
+  animation: slide-in 250ms ease-out forwards
+.list-slide-leave-active
+  opacity: 0
+  position: absolute
+.list-slide-move
+  transition: transform 400ms
+@keyframes slide-in
+  from
+    transform: translateY(1rem)
+    opacity: 0
+  to
+    transform: translateY(0px)
+    opacity: 1
+
+
+
+.rotate-enter-active,
+.rotate-leave-active
+  transition: 150ms
+.rotate-enter
+  transform: rotate(-180deg) scale(0.5)
+.rotate-leave-to
+  transform: rotate(180deg) scale(0.5)

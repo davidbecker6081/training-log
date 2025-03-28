@@ -1,0 +1,839 @@
+///--   HELPERS   --//////////////////////////////
+////////////////////////////////////////////////
+
+.required-indicator::after
+  content: '*'
+  margin-left: 1px
+  color: $danger
+
+//--  ACTIVE OUTLINE  --//
+.no-active-outline
+  &:active
+    outline: none
+
+
+//--  LAYOUT  --//
+.is-flex-wrap
+  @extend .is-flex
+  flex-wrap: wrap !important
+
+.is-flex-column
+  @extend .is-flex
+  flex-direction: column !important
+
+// flex-child-classes
+.flex-grow
+  flex-grow: 1
+.no-flex-shrink
+  flex-shrink: 0
+
+.align-self-end
+  align-self: flex-end
+.align-self-start
+  align-self: flex-start
+.align-self-center
+  align-self: center
+.align-self-stretch
+  align-self: stretch
+
+.justify-start
+  justify-content: flex-start !important
+.justify-end
+  justify-content: flex-end !important
+.justify-center
+  justify-content: center !important
+.justify-between
+  justify-content: space-between !important
+.justify-around
+  justify-content: space-around !important
+
+@media ( max-width: $tablet )
+  .justify-center-tablet
+    justify-content: center !important
+
+.align-start
+  align-items: flex-start !important
+.align-end
+  align-items: flex-end !important
+.align-center
+  align-items: center !important
+.align-baseline
+  align-items: baseline !important
+
+.align-content-start
+  align-content: flex-start !important
+.align-content-end
+  align-content: flex-end !important
+.align-content-center
+  align-content: center !important
+.align-content-stretch
+  align-content: stretch !important
+.align-content-between
+  align-content: space-between !important
+.align-content-around
+  align-content: space-around !important
+
+// /////////////////////////////////
+// deprecated
+.is-flex-align-center
+  @extend .is-flex
+  align-items: center !important
+.is-flex-space-between
+  @extend .is-flex
+  justify-content: space-between !important
+.is-flex-end-aligned
+  @extend .is-flex
+  align-items: flex-end !important
+.is-flex-start-aligned
+  @extend .is-flex
+  align-items: flex-start !important
+.is-flex-center
+  @extend .is-flex
+  justify-content: center !important
+// /////////////////////////////////
+
+
+//--  DISTRIBUTION  --//
+.dist-x-xs
+  > *:not(:last-child)
+    margin-right: $size-extra-small !important
+.dist-y-xs
+  > *:not(:last-child)
+    margin-bottom: $size-extra-small !important
+
+.dist-x-sm
+  > *:not(:last-child)
+    margin-right: $size-small !important
+.dist-y-sm
+  > *:not(:last-child)
+    margin-bottom: $size-small !important
+
+.dist-x
+  > *:not(:last-child)
+    margin-right: $size-normal !important
+.dist-y
+  > *:not(:last-child)
+    margin-bottom: $size-normal !important
+
+.dist-x-md
+  > *:not(:last-child)
+    margin-right: $size-medium !important
+.dist-y-md
+  > *:not(:last-child)
+    margin-bottom: $size-medium !important
+
+.dist-x-lg
+  > *:not(:last-child)
+    margin-right: $size-large !important
+.dist-y-lg
+  > *:not(:last-child)
+    margin-bottom: $size-large !important
+
+.dist-x-xl
+  > *:not(:last-child)
+    margin-right: $size-extra-large !important
+.dist-y-xl
+  > *:not(:last-child)
+    margin-bottom: $size-extra-large !important
+
+
+//--  SPACING  --//
+// Margin
+.mar-t-auto
+  margin-top: auto !important
+.mar-r-auto
+  margin-right: auto !important
+.mar-b-auto
+  margin-bottom: auto !important
+.mar-l-auto
+  margin-left: auto !important
+.mar-x-auto
+  margin-left: auto !important
+  margin-right: auto !important
+.mar-y-auto
+  margin-top: auto !important
+  margin-bottom: auto !important
+.mar-auto
+  margin: auto !important
+
+.mar-t-none
+  margin-top: 0 !important
+.mar-r-none
+  margin-right: 0 !important
+.mar-b-none
+  margin-bottom: 0 !important
+.mar-l-none
+  margin-left: 0 !important
+.mar-x-none
+  margin-left: 0 !important
+  margin-right: 0 !important
+.mar-y-none
+  margin-top: 0 !important
+  margin-bottom: 0 !important
+.mar-none
+  margin: 0 !important
+.has-marginless-children > *
+  margin: 0 !important
+
+.mar-t-xxs
+  margin-top: $size-extra-extra-small !important
+.mar-r-xxs
+  margin-right: $size-extra-extra-small !important
+.mar-b-xxs
+  margin-bottom: $size-extra-extra-small !important
+.mar-l-xxs
+  margin-left: $size-extra-extra-small !important
+.mar-y-xxs
+  margin-top: $size-extra-extra-small !important
+  margin-bottom: $size-extra-extra-small !important
+.mar-x-xxs
+  margin-left: $size-extra-extra-small !important
+  margin-right: $size-extra-extra-small !important
+.mar-xxs
+  margin: $size-extra-extra-small !important
+
+.mar-t-xs
+  margin-top: $size-extra-small !important
+.mar-r-xs
+  margin-right: $size-extra-small !important
+.mar-b-xs
+  margin-bottom: $size-extra-small !important
+.mar-l-xs
+  margin-left: $size-extra-small !important
+.mar-x-xs
+  margin-left: $size-extra-small !important
+  margin-right: $size-extra-small !important
+.mar-y-xs
+  margin-top: $size-extra-small !important
+  margin-bottom: $size-extra-small !important
+.mar-xs
+  margin: $size-extra-small !important
+
+.mar-t-sm
+  margin-top: $size-small !important
+.mar-r-sm
+  margin-right: $size-small !important
+.mar-b-sm
+  margin-bottom: $size-small !important
+.mar-l-sm
+  margin-left: $size-small !important
+.mar-x-sm
+  margin-left: $size-small !important
+  margin-right: $size-small !important
+.mar-y-sm
+  margin-top: $size-small !important
+  margin-bottom: $size-small !important
+.mar-sm
+  margin: $size-small !important
+
+.mar-t
+  margin-top: $size-normal !important
+.mar-r
+  margin-right: $size-normal !important
+.mar-b
+  margin-bottom: $size-normal !important
+.mar-l
+  margin-left: $size-normal !important
+.mar-x
+  margin-left: $size-normal !important
+  margin-right: $size-normal !important
+.mar-y
+  margin-top: $size-normal !important
+  margin-bottom: $size-normal !important
+.mar
+  margin: $size-normal !important
+
+.mar-t-md
+  margin-top: $size-medium !important
+.mar-r-md
+  margin-right: $size-medium !important
+.mar-b-md
+  margin-bottom: $size-medium !important
+.mar-l-md
+  margin-left: $size-medium !important
+.mar-x-md
+  margin-left: $size-medium !important
+  margin-right: $size-medium !important
+.mar-y-md
+  margin-top: $size-medium !important
+  margin-bottom: $size-medium !important
+.mar-md
+  margin: $size-medium !important
+
+.mar-t-lg
+  margin-top: $size-large !important
+.mar-r-lg
+  margin-right: $size-large !important
+.mar-b-lg
+  margin-bottom: $size-large !important
+.mar-l-lg
+  margin-left: $size-large !important
+.mar-x-lg
+  margin-left: $size-large !important
+  margin-right: $size-large !important
+.mar-y-lg
+  margin-top: $size-large !important
+  margin-bottom: $size-large !important
+.mar-lg
+  margin: $size-large !important
+
+.mar-t-xl
+  margin-top: $size-extra-large !important
+.mar-r-xl
+  margin-right: $size-extra-large !important
+.mar-b-xl
+  margin-bottom: $size-extra-large !important
+.mar-l-xl
+  margin-left: $size-extra-large !important
+.mar-x-xl
+  margin-left: $size-extra-large !important
+  margin-right: $size-extra-large !important
+.mar-y-xl
+  margin-top: $size-extra-large !important
+  margin-bottom: $size-extra-large !important
+.mar-xl
+  margin: $size-extra-large !important
+
+
+// Padding
+.pad-t-none
+  padding-top: 0 !important
+.pad-r-none
+  padding-right: 0 !important
+.pad-b-none
+  padding-bottom: 0 !important
+.pad-l-none
+  padding-left: 0 !important
+.pad-x-none
+  padding-left: 0 !important
+  padding-right: 0 !important
+.pad-y-none
+  padding-top: 0 !important
+  padding-bottom: 0 !important
+.pad-none
+  padding: 0 !important
+
+.pad-t-xs
+  padding-top: $size-extra-small !important
+.pad-r-xs
+  padding-right: $size-extra-small !important
+.pad-b-xs
+  padding-bottom: $size-extra-small !important
+.pad-l-xs
+  padding-left: $size-extra-small !important
+.pad-x-xs
+  padding-left: $size-extra-small !important
+  padding-right: $size-extra-small !important
+.pad-y-xs
+  padding-top: $size-extra-small !important
+  padding-bottom: $size-extra-small !important
+.pad-xs
+  padding: $size-extra-small !important
+
+.pad-t-sm
+  padding-top: $size-small !important
+.pad-r-sm
+  padding-right: $size-small !important
+.pad-b-sm
+  padding-bottom: $size-small !important
+.pad-l-sm
+  padding-left: $size-small !important
+.pad-x-sm
+  padding-left: $size-small !important
+  padding-right: $size-small !important
+.pad-y-sm
+  padding-top: $size-small !important
+  padding-bottom: $size-small !important
+.pad-sm
+  padding: $size-small !important
+
+.pad-t
+  padding-top: $size-normal !important
+.pad-r
+  padding-right: $size-normal !important
+.pad-b
+  padding-bottom: $size-normal !important
+.pad-l
+  padding-left: $size-normal !important
+.pad-x
+  padding-left: $size-normal !important
+  padding-right: $size-normal !important
+.pad-y
+  padding-top: $size-normal !important
+  padding-bottom: $size-normal !important
+.pad
+  padding: $size-normal !important
+
+.pad-t-md
+  padding-top: $size-medium !important
+.pad-r-md
+  padding-right: $size-medium !important
+.pad-b-md
+  padding-bottom: $size-medium !important
+.pad-l-md
+  padding-left: $size-medium !important
+.pad-x-md
+  padding-left: $size-medium !important
+  padding-right: $size-medium !important
+.pad-y-md
+  padding-top: $size-medium !important
+  padding-bottom: $size-medium !important
+.pad-md
+  padding: $size-medium !important
+
+.pad-t-lg
+  padding-top: $size-large !important
+.pad-r-lg
+  padding-right: $size-large !important
+.pad-b-lg
+  padding-bottom: $size-large !important
+.pad-l-lg
+  padding-left: $size-large !important
+.pad-x-lg
+  padding-left: $size-large !important
+  padding-right: $size-large !important
+.pad-y-lg
+  padding-top: $size-large !important
+  padding-bottom: $size-large !important
+.pad-lg
+  padding: $size-large !important
+
+.pad-t-xl
+  padding-top: $size-extra-large !important
+.pad-r-xl
+  padding-right: $size-extra-large !important
+.pad-b-xl
+  padding-bottom: $size-extra-large !important
+.pad-l-xl
+  padding-left: $size-extra-large !important
+.pad-x-xl
+  padding-left: $size-extra-large !important
+  padding-right: $size-extra-large !important
+.pad-y-xl
+  padding-top: $size-extra-large !important
+  padding-bottom: $size-extra-large !important
+.pad-xl
+  padding: $size-extra-large !important
+
+
+
+//--  BACKGROUNDS  --//
+.has-background-primary-light
+  background-color: $primary-light !important
+.has-background-primary-lighter
+  background-color: $primary-lighter !important
+.has-background-primary-lightest
+  background-color: $primary-lightest !important
+
+//--  HOVER BACKGROUNDS  --//
+.has-hover-background-primary-dark:hover
+  background-color: $primary-dark !important
+.has-hover-background-primary-medium:hover
+  background-color: $primary-medium !important
+.has-hover-background-primary-light:hover
+  background-color: $primary-light !important
+.has-hover-background-primary-lighter:hover
+  background-color: $primary-lighter !important
+.has-hover-background-primary-lightest:hover
+  background-color: $primary-lightest !important
+.has-hover-background-grey:hover
+  background-color: $grey !important
+.has-hover-background-grey-light:hover
+  background-color: $grey-light !important
+.has-hover-background-grey-lighter:hover
+  background-color: $grey-lighter !important
+.has-hover-background-grey-lightest:hover
+  background-color: $grey-lightest !important
+
+
+//--  BORDERS  --//
+// standard
+.has-border
+  border: 1px solid !important
+.has-border-top
+  border-top: 1px solid !important
+.has-border-right
+  border-right: 1px solid !important
+.has-border-bottom
+  border-bottom: 1px solid !important
+.has-border-left
+  border-left: 1px solid !important
+.has-border-x
+  border-right: 1px solid !important
+  border-left: 1px solid !important
+.has-border-y
+  border-top: 1px solid !important
+  border-bottom: 1px solid !important
+.has-border-none
+  border: none !important
+
+// large
+.has-border-lg
+  border: 2px solid !important
+.has-border-top-lg
+  border-top: 2px solid !important
+.has-border-right-lg
+  border-right: 2px solid !important
+.has-border-bottom-lg
+  border-bottom: 2px solid !important
+.has-border-left-lg
+  border-left: 2px solid !important
+.has-border-x-lg
+  border-right: 2px solid !important
+  border-left: 2px solid !important
+.has-border-y-lg
+  border-top: 2px solid !important
+  border-bottom: 2px solid !important
+
+// colors
+// .has-border-primary
+//   border-color: $primary !important
+// .has-border-primary-medium
+//   border-color: $primary-medium !important
+// .has-border-primary-dark
+//   border-color: $primary-dark !important
+// .has-border-primary-light
+//   border-color: $primary-light !important
+// .has-border-primary-lighter
+//   border-color: $primary-lighter !important
+// .has-border-primary-lightest
+//   border-color: $primary-lightest !important
+// .has-border-danger
+//   border-color: $danger !important
+// .has-border-warning
+//   border-color: $warning !important
+// .has-border-warning-dark
+//   border-color: $warning-dark !important
+// .has-border-grey
+//   border-color: $grey !important
+// .has-border-grey-light
+//   border-color: $grey-light !important
+// .has-border-grey-lighter
+//   border-color: $grey-lighter !important
+// .has-border-grey-lightest
+//   border-color: $grey-lightest !important
+
+// radius
+.has-radius-small
+  border-radius: $radius-small !important
+.has-radius
+  border-radius: $radius !important
+.has-radius-large
+  border-radius: $radius-large !important
+.has-radius-full
+  border-radius: $radius-rounded !important
+
+// border styles
+.has-border-dashed
+  border-style: dashed !important
+
+// children border
+.has-border-bottom-children
+  > *:not(:last-child)
+    border-bottom: 1px solid
+
+  &.has-border-grey-lighter
+    > *:not(:last-child)
+      border-bottom-color: $grey-lighter !important
+
+
+//--  WHITE SPACE  --//
+
+.no-wrap-text
+  white-space: nowrap !important
+
+.wrap-text
+  white-space: normal !important
+
+
+//--  TEXTURE BACKGROUND IMAGE  --//
+.is-textured
+  background-position: center top
+  background-attachment: fixed
+
+// // adds a semi-transparent textured background image
+// .is-textured-dark
+//   @extend .is-textured
+//   background-image: url(/images/transparent-square-tiles-dark.png)
+// .is-textured-darker
+//   @extend .is-textured
+//   background-image: url(/images/transparent-square-tiles-darker.png)
+// .is-textured-light
+//   @extend .is-textured
+//   background-image: url(/images/transparent-square-tiles-light.png)
+// .is-textured-lighter
+//   @extend .is-textured
+//   background-image: url(/images/transparent-square-tiles-lighter.png)
+
+
+//--  SHADOWS  --//
+.inset-shadow-bottom
+  box-shadow: inset 0px -8px 12px -8px rgba(0, 0, 0, 0.15)
+
+.has-shadow
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%)
+
+
+//--  DRAG / GRABBER  --//
+.drag-handle
+  color: $grey-light
+
+  &:hover
+    cursor: grab
+
+  &:active
+    cursor: grabbing
+
+
+  &.drag-disabled
+    &:hover, &.active
+      cursor: not-allowed
+
+.ghost
+  position: relative
+
+  &::before
+    z-index: 10
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background: $grey-lighter
+
+.sortable-drag
+  opacity: 1 !important
+  transform: rotate(-2deg)
+  box-shadow: 0.5em 0.75em 2em rgb(10 10 10 / 25%)
+
+//--  SEARCH TERM HIGHLIGHT  --//
+.search-term
+  background-color: $warning
+  font-weight: bold
+
+
+
+//--  TEXT  --//
+.is-monospaced
+  font-family: 'Fira Code', monospace !important
+
+  &.has-extra-spacing
+    letter-spacing: 1px
+
+.has-text-strikethrough
+  text-decoration: line-through
+
+.has-hover-text-dark:hover
+  color: $dark !important
+
+.has-hover-text-underline:hover
+  text-decoration: underline !important
+
+.text-align-center
+  text-align: center !important
+
+
+//--  MISC  --//
+.auto-height
+  height: auto !important
+
+.auto-width
+  width: auto !important
+
+.is-full-width
+  width: 100% !important
+
+.is-max-content-width
+  width: max-content !important
+
+.is-fit-content-width
+  width: fit-content !important
+
+.is-full-height
+  height: 100% !important
+
+.no-pointer-events
+  pointer-events: none !important
+
+.is-absolute
+  position: absolute
+
+.is-semi-transparent
+  opacity: 0.5
+
+@media print
+  .is-invisible-print
+    visibility: hidden !important
+
+  .is-hidden-print
+    display: none !important
+
+a.disabled
+  pointer-events: none
+  color: $grey
+  text-decoration: none
+
+
+//--  CURSORS  --//
+.has-cursor-default
+  cursor: default
+
+.has-cursor-pointer
+  cursor: pointer
+
+.has-cursor-not-allowed
+  cursor: not-allowed
+
+.has-cursor-cell
+  cursor: cell
+
+
+//--  OVERFLOW  --//
+.overflow-y-auto
+  overflow-y: auto
+
+
+//--  OVERFLOW SCROLL INDICATORS  --//
+[class^='overflow-x'],
+[class^='overflow-y'],
+[class*=' overflow-x'],
+[class*=' overflow-y']
+  &::after,
+  &::before
+    content: ''
+    position: absolute
+    opacity: 0
+    transition: opacity 200ms
+    pointer-events: none
+    z-index: 5
+
+
+[class^='overflow-y'],
+[class*=' overflow-y']
+  &::after,
+  &::before
+    left: 0
+    right: 0
+    height: 40px
+  &::before
+    top: 0
+    box-shadow: 0px 30px 25px -20px inset rgba(0, 0, 0, 0.125), 0px 9px 10px -10px inset rgba(0, 0, 0, 0.25)
+  &::after
+    bottom: 0
+    box-shadow: 0px -30px 25px -20px inset rgba(0, 0, 0, 0.125), 0px -9px 10px -10px inset rgba(0, 0, 0, 0.25)
+
+  &.overflow-y-top::before
+    opacity: 1
+  &.overflow-y-bottom::after
+    opacity: 1
+  &.overflow-y-both
+    &::before,
+    &::after
+      opacity: 1
+
+[class^='overflow-x'],
+[class*=' overflow-x']
+  &::before,
+  &::after
+    top: 0
+    bottom: 0
+    width: 40px
+  &::before
+    left: 0
+    box-shadow: 30px 0px 25px -20px inset rgba(0, 0, 0, 0.125), 9px 0px 10px -10px inset rgba(0, 0, 0, 0.25)
+  &::after
+    right: 0
+    box-shadow: -30px 0px 25px -20px inset rgba(0, 0, 0, 0.125), -9px 0px 10px -10px inset rgba(0, 0, 0, 0.25)
+
+  &.overflow-x-left::before
+    opacity: 1
+  &.overflow-x-right::after
+    opacity: 1
+  &.overflow-x-both
+    &::before,
+    &::after
+      opacity: 1
+
+
+
+//--  HIGHLIGHT ELEMENT  --//
+.highlight-element
+  box-shadow: 0px 0px 10px -2px $primary
+
+
+
+//--  ANIMATIONS  --//
+.animated
+  &.animated-slow
+    animation-duration: 666ms
+
+.spin
+  animation-name: spin
+  animation-duration: 666ms
+  animation-iteration-count: infinite
+  animation-timing-function: cubic-bezier(0.4, 0.66, 0.66, 0.4)
+
+.spin-once
+  animation-name: spin
+  animation-duration: 666ms
+  animation-fill-mode: forwards
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+.spin-smooth
+  animation-name: spin
+  animation-duration: 1000ms
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+
+
+.pulse
+  animation-name: pulse
+  animation-duration: 400ms
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+
+
+.pulse-slow
+  animation-name: pulse
+  animation-duration: 666ms
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+  animation-direction: alternate
+
+@keyframes pulse
+  from
+    opacity: 1
+  to
+    opacity: 0.5
+
+
+
+.shift
+  animation: shift 600ms linear infinite
+.shift-left
+  animation: shift 800ms cubic-bezier(0, 0.4, 0.65, 0.68) infinite
+.shift-right
+  animation: shift 800ms cubic-bezier(0, 0.4, 0.65, 0.68) infinite reverse
+
+@keyframes shift
+  0%
+    transform: translateX(0)
+  30%
+    transform: translateX(2px)
+  70%
+    transform: translateX(-2px)
+  100%
+    transform: translateX(0)

@@ -1,0 +1,398 @@
+.is-grid
+  display: grid
+
+  // removes margin from certain direct child elements
+  // so they can be spaced out using grid gap instead
+  > .field,
+  > .b-radio,
+  > .b-checkbox
+    margin: 0 !important
+
+
+  &.justify-center
+    justify-items: center
+  &.justify-start
+    justify-items: start
+  &.justify-end
+    justify-items: end
+
+.is-dense
+  grid-auto-flow: dense
+
+.justify-self-stretch
+  justify-self: stretch
+.justify-self-start
+  justify-self: start
+.justify-self-end
+  justify-self: end
+.justify-self-center
+  justify-self: center
+
+.place-self-center
+  place-self: center !important
+.place-self-start
+  place-self: start !important
+.place-self-end
+  place-self: end !important
+
+
+// gap spacing
+.gap-xl
+  gap: $size-extra-large
+.gap-lg
+  gap: $size-large
+.gap-md
+  gap: $size-medium
+.gap
+  gap: $size-normal
+.gap-sm
+  gap: $size-small
+.gap-xs
+  gap: $size-extra-small
+
+.gap-x-xl
+  column-gap: $size-extra-large
+.gap-x-lg
+  column-gap: $size-large
+.gap-x-md
+  column-gap: $size-medium
+.gap-x
+  column-gap: $size-normal
+.gap-x-sm
+  column-gap: $size-small
+.gap-x-xs
+  column-gap: $size-extra-small
+
+.gap-y-xl
+  row-gap: $size-extra-large
+.gap-y-lg
+  row-gap: $size-large
+.gap-y-md
+  row-gap: $size-medium
+.gap-y
+  row-gap: $size-normal
+.gap-y-sm
+  row-gap: $size-small
+.gap-y-xs
+  row-gap: $size-extra-small
+
+
+
+// row height
+.row-height-auto
+  grid-auto-rows: 1fr
+
+
+// row spaning
+.row-span-1
+  grid-row: span 1
+.row-span-2
+  grid-row: span 2
+.row-span-3
+  grid-row: span 3
+.row-span-4
+  grid-row: span 4
+.row-span-5
+  grid-row: span 5
+
+.row-span-1-tablet
+  @media (max-width: $tablet)
+    grid-row: span 1
+.row-span-2-tablet
+  @media (max-width: $tablet)
+    grid-row: span 2
+.row-span-3-tablet
+  @media (max-width: $tablet)
+    grid-row: span 3
+.row-span-4-tablet
+  @media (max-width: $tablet)
+    grid-row: span 4
+.row-span-5-tablet
+  @media (max-width: $tablet)
+    grid-row: span 5
+
+.row-span-1-desktop
+  @media (max-width: $desktop)
+    grid-row: span 1
+.row-span-2-desktop
+  @media (max-width: $desktop)
+    grid-row: span 2
+.row-span-3-desktop
+  @media (max-width: $desktop)
+    grid-row: span 3
+.row-span-4-desktop
+  @media (max-width: $desktop)
+    grid-row: span 4
+.row-span-5-desktop
+  @media (max-width: $desktop)
+    grid-row: span 5
+
+.row-span-1-widescreen
+  @media (max-width: $widescreen)
+    grid-row: span 1
+.row-span-2-widescreen
+  @media (max-width: $widescreen)
+    grid-row: span 2
+.row-span-3-widescreen
+  @media (max-width: $widescreen)
+    grid-row: span 3
+.row-span-4-widescreen
+  @media (max-width: $widescreen)
+    grid-row: span 4
+.row-span-5-widescreen
+  @media (max-width: $widescreen)
+    grid-row: span 5
+
+
+
+// static rows
+.row-1
+  grid-template-rows: repeat(1, 1fr)
+.row-2
+  grid-template-rows: repeat(2, 1fr)
+.row-3
+  grid-template-rows: repeat(3, 1fr)
+.row-4
+  grid-template-rows: repeat(4, 1fr)
+.row-5
+  grid-template-rows: repeat(5, 1fr)
+
+.row-1-tablet
+  @media (max-width: $tablet)
+    grid-template-rows: repeat(1, 1fr)
+.row-2-tablet
+  @media (max-width: $tablet)
+    grid-template-rows: repeat(2, 1fr)
+.row-3-tablet
+  @media (max-width: $tablet)
+    grid-template-rows: repeat(3, 1fr)
+.row-4-tablet
+  @media (max-width: $tablet)
+    grid-template-rows: repeat(4, 1fr)
+.row-5-tablet
+  @media (max-width: $tablet)
+    grid-template-rows: repeat(5, 1fr)
+
+.row-1-desktop
+  @media (max-width: $desktop)
+    grid-template-rows: repeat(1, 1fr)
+.row-2-desktop
+  @media (max-width: $desktop)
+    grid-template-rows: repeat(2, 1fr)
+.row-3-desktop
+  @media (max-width: $desktop)
+    grid-template-rows: repeat(3, 1fr)
+.row-4-desktop
+  @media (max-width: $desktop)
+    grid-template-rows: repeat(4, 1fr)
+.row-5-desktop
+  @media (max-width: $desktop)
+    grid-template-rows: repeat(5, 1fr)
+
+.row-1-widescreen
+  @media (max-width: $widescreen)
+    grid-template-rows: repeat(1, 1fr)
+.row-2-widescreen
+  @media (max-width: $widescreen)
+    grid-template-rows: repeat(2, 1fr)
+.row-3-widescreen
+  @media (max-width: $widescreen)
+    grid-template-rows: repeat(3, 1fr)
+.row-4-widescreen
+  @media (max-width: $widescreen)
+    grid-template-rows: repeat(4, 1fr)
+.row-5-widescreen
+  @media (max-width: $widescreen)
+    grid-template-rows: repeat(5, 1fr)
+
+.row-1-fullhd
+  @media (max-width: $fullhd)
+    grid-template-rows: repeat(1, 1fr)
+.row-2-fullhd
+  @media (max-width: $fullhd)
+    grid-template-rows: repeat(2, 1fr)
+.row-3-fullhd
+  @media (max-width: $fullhd)
+    grid-template-rows: repeat(3, 1fr)
+.row-4-fullhd
+  @media (max-width: $fullhd)
+    grid-template-rows: repeat(4, 1fr)
+.row-5-fullhd
+  @media (max-width: $fullhd)
+    grid-template-rows: repeat(5, 1fr)
+
+
+// dynamic rows
+.row-min-100
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr))
+.row-min-200
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr))
+.row-min-300
+  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr))
+.row-min-400
+  grid-template-rows: repeat(auto-fit, minmax(400px, 1fr))
+.row-min-500
+  grid-template-rows: repeat(auto-fit, minmax(500px, 1fr))
+.row-min-600
+  grid-template-rows: repeat(auto-fit, minmax(600px, 1fr))
+
+// column spaning
+.col-span-1
+  grid-column: span 1
+.col-span-2
+  grid-column: span 2
+.col-span-3
+  grid-column: span 3
+.col-span-4
+  grid-column: span 4
+.col-span-5
+  grid-column: span 5
+.col-span-6
+  grid-column: span 6
+
+.col-span-1-tablet
+  @media (max-width: $tablet)
+    grid-column: span 1
+.col-span-2-tablet
+  @media (max-width: $tablet)
+    grid-column: span 2
+.col-span-3-tablet
+  @media (max-width: $tablet)
+    grid-column: span 3
+.col-span-4-tablet
+  @media (max-width: $tablet)
+    grid-column: span 4
+.col-span-5-tablet
+  @media (max-width: $tablet)
+    grid-column: span 5
+
+.col-span-1-desktop
+  @media (max-width: $desktop)
+    grid-column: span 1
+.col-span-2-desktop
+  @media (max-width: $desktop)
+    grid-column: span 2
+.col-span-3-desktop
+  @media (max-width: $desktop)
+    grid-column: span 3
+.col-span-4-desktop
+  @media (max-width: $desktop)
+    grid-column: span 4
+.col-span-5-desktop
+  @media (max-width: $desktop)
+    grid-column: span 5
+
+.col-span-1-widescreen
+  @media (max-width: $widescreen)
+    grid-column: span 1
+.col-span-2-widescreen
+  @media (max-width: $widescreen)
+    grid-column: span 2
+.col-span-3-widescreen
+  @media (max-width: $widescreen)
+    grid-column: span 3
+.col-span-4-widescreen
+  @media (max-width: $widescreen)
+    grid-column: span 4
+.col-span-5-widescreen
+  @media (max-width: $widescreen)
+    grid-column: span 5
+
+
+
+// static columns
+.col-1
+  grid-template-columns: repeat(1, 1fr)
+.col-2
+  grid-template-columns: repeat(2, 1fr)
+.col-3
+  grid-template-columns: repeat(3, 1fr)
+.col-4
+  grid-template-columns: repeat(4, 1fr)
+.col-5
+  grid-template-columns: repeat(5, 1fr)
+.col-6
+  grid-template-columns: repeat(6, 1fr)
+.col-7
+  grid-template-columns: repeat(7, 1fr)
+
+.col-1-tablet
+  @media (max-width: $tablet)
+    grid-template-columns: repeat(1, 1fr)
+.col-2-tablet
+  @media (max-width: $tablet)
+    grid-template-columns: repeat(2, 1fr)
+.col-3-tablet
+  @media (max-width: $tablet)
+    grid-template-columns: repeat(3, 1fr)
+.col-4-tablet
+  @media (max-width: $tablet)
+    grid-template-columns: repeat(4, 1fr)
+.col-5-tablet
+  @media (max-width: $tablet)
+    grid-template-columns: repeat(5, 1fr)
+
+.col-1-desktop
+  @media (max-width: $desktop)
+    grid-template-columns: repeat(1, 1fr)
+.col-2-desktop
+  @media (max-width: $desktop)
+    grid-template-columns: repeat(2, 1fr)
+.col-3-desktop
+  @media (max-width: $desktop)
+    grid-template-columns: repeat(3, 1fr)
+.col-4-desktop
+  @media (max-width: $desktop)
+    grid-template-columns: repeat(4, 1fr)
+.col-5-desktop
+  @media (max-width: $desktop)
+    grid-template-columns: repeat(5, 1fr)
+
+.col-1-widescreen
+  @media (max-width: $widescreen)
+    grid-template-columns: repeat(1, 1fr)
+.col-2-widescreen
+  @media (max-width: $widescreen)
+    grid-template-columns: repeat(2, 1fr)
+.col-3-widescreen
+  @media (max-width: $widescreen)
+    grid-template-columns: repeat(3, 1fr)
+.col-4-widescreen
+  @media (max-width: $widescreen)
+    grid-template-columns: repeat(4, 1fr)
+.col-5-widescreen
+  @media (max-width: $widescreen)
+    grid-template-columns: repeat(5, 1fr)
+
+.col-1-fullhd
+  @media (max-width: $fullhd)
+    grid-template-columns: repeat(1, 1fr)
+.col-2-fullhd
+  @media (max-width: $fullhd)
+    grid-template-columns: repeat(2, 1fr)
+.col-3-fullhd
+  @media (max-width: $fullhd)
+    grid-template-columns: repeat(3, 1fr)
+.col-4-fullhd
+  @media (max-width: $fullhd)
+    grid-template-columns: repeat(4, 1fr)
+.col-5-fullhd
+  @media (max-width: $fullhd)
+    grid-template-columns: repeat(5, 1fr)
+
+
+// dynamic columns
+.col-min-100
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+.col-min-200
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+.col-min-300
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+.col-min-400
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+.col-min-500
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr))
+.col-min-600
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr))
+
+
