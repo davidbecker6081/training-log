@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { parseCsv } from '../services/csv-parser';
+import { Icon } from 'react-bulma-components'
+import { TfiImport } from "react-icons/tfi";
 
 const CustomDropzone = () => {
     const [csvData, setCsvData] = useState(null)
@@ -28,11 +30,10 @@ const CustomDropzone = () => {
     return (
         <div {...getRootProps()}>
           <input {...getInputProps()} />
-          {
-            isDragActive ?
-              <p>Drop the files here ...</p> :
-              <p>Drag 'n' drop some files here, or click to select files</p>
-          }
+          <p className="is-flex is-align-items-center">
+            Upload Peak Force
+            <TfiImport className="mar-l" />
+          </p>
         </div>
       )
 }
