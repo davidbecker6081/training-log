@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { parseCsv } from '../services/csv-parser';
-import { Icon } from 'react-bulma-components'
 import { TfiImport } from "react-icons/tfi";
 
 const CustomDropzone = () => {
