@@ -17,7 +17,7 @@ import React, {
     fallback?: JSX.Element;
   }
   
-  const DynamicIcon: React.FC<IProps> = ({ ...props }) => {
+  const ReactIcon: React.FC<IProps> = ({ ...props }) => {
     const [library, iconComponent] = props.icon.split("/");
   
     if (!library || !iconComponent) return <div>Could Not Find Icon</div>;
@@ -46,5 +46,5 @@ import React, {
     );
   };
   
-  export default DynamicIcon;
+  export default ReactIcon;
   

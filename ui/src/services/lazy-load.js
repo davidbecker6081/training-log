@@ -1,4 +1,4 @@
-import Papa from 'papaparse';
+import { lazy } from "react";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,19 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const parseCsv = (_a) => __awaiter(void 0, [_a], void 0, function* ({ csvFile, callbackFn }) {
-    let parsedFile;
-    const onError = (error) => {
-        console.error('Error parsing CSV file:', error);
-    };
-    const onComplete = (parsedResults) => {
-        callbackFn(parsedResults.data);
-    };
-    yield Papa.parse(csvFile, {
-        complete: onComplete,
-        error: onError,
-        header: true,
-        skipEmptyLines: true,
-    });
-});
-export { parseCsv };
+const lazyLoad = (path, namedExport) => {
+    return lazy(() => __awaiter(void 0, void 0, void 0, function* () {
+        const module = yield import(path);
+        return namedExport ? { default: module[namedExport] } : module;
+    }));
+};
+export default lazyLoad;
