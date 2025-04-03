@@ -33,7 +33,7 @@ const CustomDropzone = () => {
           <input {...getInputProps()} />
           <p className="is-flex is-align-items-center">
             Upload Peak Force
-            <DynamicIcon className="mar-l" icon="TfiUpload" />
+            <DynamicIcon className="mar-l" icon="tfi/TfiUpload" />
           </p>
         </div>
       )

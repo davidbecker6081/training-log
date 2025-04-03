@@ -3,7 +3,6 @@ import React, {
     Suspense,
     SVGAttributes,
     lazy,
-    ReactNode,
     JSX
   } from "react";
   import { IconContext } from "react-icons";
