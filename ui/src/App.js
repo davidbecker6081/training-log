@@ -1,7 +1,7 @@
 import './styles/main.sass';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { CustomDropzone } from './components/CustomDropzone';
+import { CustomDropzone } from './components/CustomDropzone/CustomDropzone';
 import { Button } from 'react-bulma-components';
 const API_URL = 'http://localhost:3000/api/v1';
 

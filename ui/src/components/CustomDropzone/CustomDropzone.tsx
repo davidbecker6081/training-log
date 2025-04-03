@@ -1,17 +1,19 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { parseCsv } from '../services/csv-parser';
-import { TfiImport } from "react-icons/tfi";
+import { parseCsv } from '../../services/csv-parser'
+import DynamicIcon from '../Icon/ReactIcon'
+
 
 const CustomDropzone = () => {
-    const [csvData, setCsvData] = useState(null)
+    const [csvData, setCsvData] = useState(null);
 
 
-    const onDropCallback = (parsedCsv) => {
+    const onDropCallback = (parsedCsv: any) => {
       setCsvData(parsedCsv);
+      console.log('Parsed CSV data:', parsedCsv);
     }
 
-    const onDrop = useCallback(async (acceptedFiles) => {
+    const onDrop = useCallback(async (acceptedFiles: File[]) => {
         try {
           await parseCsv({ csvFile: acceptedFiles[0], callbackFn: onDropCallback });
         }
@@ -31,7 +33,7 @@ const CustomDropzone = () => {
           <input {...getInputProps()} />
           <p className="is-flex is-align-items-center">
             Upload Peak Force
-            <TfiImport className="mar-l" />
+            <DynamicIcon className="mar-l" icon="TfiUpload" />
           </p>
         </div>
       )
