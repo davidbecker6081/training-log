@@ -37,3 +37,13 @@ user_workouts = [
 user_workouts.each do |user_workout|
     UserWorkout.find_or_create_by!(user_workout)
 end
+
+hand_types = [
+    { name: 'left', description: 'Left hand' },
+    { name: 'right', description: 'Right hand' },
+    { name: 'left/right', description: 'Both hands' }
+]
+
+hand_types.each do |hand_type|
+    HandType.find_or_create_by!(hand_type)
+end
