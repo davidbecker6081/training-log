@@ -1,0 +1,60 @@
+.peak-force-card
+  margin-bottom: 1rem
+  transition: transform 0.2s ease, box-shadow 0.2s ease
+  
+  &.is-clickable
+    cursor: pointer
+    
+    &:hover
+      transform: translateY(-2px)
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+  
+  .peak-force-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 1rem
+  
+  .peak-force-values
+    margin: 1rem 0
+    
+    .peak-force-side
+      text-align: center
+      padding: 0.75rem
+      border-radius: 4px
+      background-color: #f5f5f5
+      
+      &.is-stronger
+        background-color: #effaf5
+        border-left: 3px solid #48c78e
+        
+      .side-label
+        font-size: 0.9rem
+        color: #666
+        margin-bottom: 0.25rem
+        
+      .side-value
+        font-size: 1.25rem
+        font-weight: 600
+  
+  .peak-force-difference
+    text-align: center
+    margin-top: 0.75rem
+    
+    .difference-value
+      font-size: 0.9rem
+      color: #666
+      
+      &.has-imbalance
+        color: #f14668
+    
+    .imbalance-warning
+      font-size: 0.8rem
+      color: #f14668
+      margin-top: 0.25rem
+  
+  .peak-force-comment
+    margin-top: 1rem
+    font-size: 0.9rem
+    color: #666
+    font-style: italic
