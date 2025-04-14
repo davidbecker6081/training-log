@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       get 'health_check', to: 'health_check#index'
 
       resources :users, only: [:index, :show] do
-        resources :workouts, only: [:index, :show]
+        resources :workouts, only: [:index, :show, :create, :update, :destroy]
       end
     end
   end
