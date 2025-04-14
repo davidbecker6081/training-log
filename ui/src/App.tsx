@@ -1,73 +1,32 @@
 import './styles/main.sass';
-import axios from './api/axios';
-import React, { useEffect, useState } from 'react';
-import { CustomDropzone } from './components/CustomDropzone/CustomDropzone';
-import { Button } from 'react-bulma-components';
+import React from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Dashboard } from './views';
 
-// Define the shape of a Workout
-interface Workout {
-  id: number;
-  name: string;
-  description: string;
-  date: string; // or `Date` if already parsed
-}
+// Create a client
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
 
-// Fetch workouts (typed return value)
-const getData = async (): Promise<Workout[] | null> => {
-  try {
-    const { data } = await axios.get<Workout[]>('users/1/workouts');
-    return data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return null;
-  }
-}
-
+/**
+ * Main application component
+ */
 function App() {
-  const [workouts, setWorkouts] = useState<Workout[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    const getWorkouts = async () => {
-      try {
-        setLoading(true);
-        const data = await getData();
-        if (data) {
-          setWorkouts(data);
-        }
-      } catch (err) {
-        setError(err as Error); // Type assertion since err is unknown
-      } finally {
-        setLoading(false);
-      }
-    };
-    getWorkouts();
-  }, []);
+  // For now, we're hardcoding the user ID to 1
+  // In a real application, this would come from authentication
+  const userId = 1;
 
   return (
-    <div className="is-flex is-flex-direction-column is-align-items-center">
-      {loading && <p>Loading...</p>}
-      {error && <p>Error loading data: {error.message}</p>}
-
-      <Button color="primary" className="mar-y-xl">
-        <CustomDropzone />
-      </Button>
-
-      {workouts.length > 0 ? (
-        <div className="dist-y-xl">
-          {workouts.map((workout) => (
-            <div key={workout.id}>
-              <h2 className="has-text-primary is-size-4">{workout.name}</h2>
-              <p>{workout.description}</p>
-              <p>Date: {new Date(workout.date).toLocaleDateString()}</p>
-            </div>
-          ))}
-        </div>
-      ) : (
-        !loading && <p>No workouts found.</p>
-      )}
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="app-container">
+        <Dashboard userId={userId} />
+      </div>
+    </QueryClientProvider>
   );
 }
 

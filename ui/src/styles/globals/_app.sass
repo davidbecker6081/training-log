@@ -1,0 +1,48 @@
+// Global app styles
+
+html, body
+  height: 100%
+  background-color: #f5f5f5
+
+#root
+  min-height: 100%
+  display: flex
+  flex-direction: column
+
+.app-container
+  flex: 1
+  display: flex
+  flex-direction: column
+  padding: 1rem
+
+// Common utility classes
+.is-clickable
+  cursor: pointer
+
+// Card styles
+.card
+  overflow: hidden
+  border-radius: 6px
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1)
+  
+  &:hover
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+
+// Form styles
+.input, .select select, .textarea
+  border-radius: 4px
+  
+  &:focus
+    border-color: #485fc7
+    box-shadow: 0 0 0 0.125em rgba(72, 95, 199, 0.25)
+
+// Button styles
+.button
+  border-radius: 4px
+  transition: all 0.2s ease
+  
+  &.is-primary
+    background-color: #485fc7
+    
+    &:hover
+      background-color: darken(#485fc7, 5%)

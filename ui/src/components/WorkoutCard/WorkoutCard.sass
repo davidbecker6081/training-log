@@ -1,0 +1,25 @@
+.workout-card
+  margin-bottom: 1rem
+  transition: transform 0.2s ease, box-shadow 0.2s ease
+  
+  &.is-clickable
+    cursor: pointer
+    
+    &:hover
+      transform: translateY(-2px)
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+  
+  .workout-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 0.75rem
+    
+    .title
+      margin-bottom: 0
+      margin-right: 1rem
+  
+  .workout-description
+    color: #666
+    font-size: 0.95rem
+    margin-top: 0.5rem
