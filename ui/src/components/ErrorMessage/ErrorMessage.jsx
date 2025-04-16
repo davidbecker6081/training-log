@@ -1,17 +1,10 @@
 import React from 'react';
-import { ApiError } from '../../types';
 import './ErrorMessage.sass';
-
-interface ErrorMessageProps {
-  error: Error | ApiError | null;
-  className?: string;
-  onRetry?: () => void;
-}
 
 /**
  * A reusable error message component
  */
-export const ErrorMessage: React.FC<ErrorMessageProps> = ({
+export const ErrorMessage = ({
   error,
   className = '',
   onRetry,

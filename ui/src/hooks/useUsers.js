@@ -1,15 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from '../api/axios';
-import { User, ApiError } from '../types';
 
 /**
  * Custom hook to fetch all users
  */
 export const useUsers = (enabled = true) => {
-  return useQuery<User[], ApiError>({
+  return useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const { data } = await axios.get<User[]>('users');
+      const { data } = await axios.get('users');
       return data;
     },
     enabled,
@@ -19,11 +18,11 @@ export const useUsers = (enabled = true) => {
 /**
  * Custom hook to fetch a specific user by ID
  */
-export const useUser = (userId: number, enabled = true) => {
-  return useQuery<User, ApiError>({
+export const useUser = (userId, enabled = true) => {
+  return useQuery({
     queryKey: ['user', userId],
     queryFn: async () => {
-      const { data } = await axios.get<User>(`users/${userId}`);
+      const { data } = await axios.get(`users/${userId}`);
       return data;
     },
     enabled,

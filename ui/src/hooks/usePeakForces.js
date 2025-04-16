@@ -1,15 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from '../api/axios';
-import { PeakForce, UserPeakForce, ApiError } from '../types';
 
 /**
  * Custom hook to fetch all peak forces
  */
 export const usePeakForces = (enabled = true) => {
-  return useQuery<PeakForce[], ApiError>({
+  return useQuery({
     queryKey: ['peakForces'],
     queryFn: async () => {
-      const { data } = await axios.get<PeakForce[]>('peak_forces');
+      const { data } = await axios.get('peak_forces');
       return data;
     },
     enabled,
@@ -19,11 +18,11 @@ export const usePeakForces = (enabled = true) => {
 /**
  * Custom hook to fetch a specific peak force by ID
  */
-export const usePeakForce = (peakForceId: number, enabled = true) => {
-  return useQuery<PeakForce, ApiError>({
+export const usePeakForce = (peakForceId, enabled = true) => {
+  return useQuery({
     queryKey: ['peakForce', peakForceId],
     queryFn: async () => {
-      const { data } = await axios.get<PeakForce>(`peak_forces/${peakForceId}`);
+      const { data } = await axios.get(`peak_forces/${peakForceId}`);
       return data;
     },
     enabled,
@@ -33,11 +32,11 @@ export const usePeakForce = (peakForceId: number, enabled = true) => {
 /**
  * Custom hook to fetch peak forces for a specific user
  */
-export const useUserPeakForces = (userId: number, enabled = true) => {
-  return useQuery<UserPeakForce[], ApiError>({
+export const useUserPeakForces = (userId, enabled = true) => {
+  return useQuery({
     queryKey: ['userPeakForces', userId],
     queryFn: async () => {
-      const { data } = await axios.get<UserPeakForce[]>(`users/${userId}/user_peak_forces`);
+      const { data } = await axios.get(`users/${userId}/user_peak_forces`);
       return data;
     },
     enabled,

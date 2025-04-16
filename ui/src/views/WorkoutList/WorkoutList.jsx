@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import { useWorkouts } from '../../hooks';
-import { Workout } from '../../types';
 import { LoadingSpinner, ErrorMessage, WorkoutCard } from '../../components';
 import './WorkoutList.sass';
-
-interface WorkoutListProps {
-  userId: number;
-  onSelectWorkout?: (workout: Workout) => void;
-  className?: string;
-}
 
 /**
  * A view component to display a list of workouts
  */
-export const WorkoutList: React.FC<WorkoutListProps> = ({
+export const WorkoutList = ({
   userId,
   onSelectWorkout,
   className = '',
@@ -21,7 +14,7 @@ export const WorkoutList: React.FC<WorkoutListProps> = ({
   const { data: workouts, isLoading, error, refetch } = useWorkouts({ userId });
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 

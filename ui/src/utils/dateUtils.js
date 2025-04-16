@@ -6,7 +6,7 @@ import dayjs from 'dayjs';
  * @param format - The format to use (default: 'MMM D, YYYY')
  * @returns The formatted date string
  */
-export const formatDate = (dateString: string, format = 'MMM D, YYYY'): string => {
+export const formatDate = (dateString, format = 'MMM D, YYYY') => {
   return dayjs(dateString).format(format);
 };
 
@@ -16,7 +16,7 @@ export const formatDate = (dateString: string, format = 'MMM D, YYYY'): string =
  * @param format - The format to use (default: 'MMM D, YYYY h:mm A')
  * @returns The formatted date string with time
  */
-export const formatDateTime = (dateString: string, format = 'MMM D, YYYY h:mm A'): string => {
+export const formatDateTime = (dateString, format = 'MMM D, YYYY h:mm A') => {
   return dayjs(dateString).format(format);
 };
 
@@ -25,7 +25,7 @@ export const formatDateTime = (dateString: string, format = 'MMM D, YYYY h:mm A'
  * @param dateString - The date string to check
  * @returns True if the date is today, false otherwise
  */
-export const isToday = (dateString: string): boolean => {
+export const isToday = (dateString) => {
   return dayjs(dateString).isSame(dayjs(), 'day');
 };
 
@@ -34,7 +34,7 @@ export const isToday = (dateString: string): boolean => {
  * @param dateString - The date string to format
  * @returns The relative time string
  */
-export const fromNow = (dateString: string): string => {
+export const fromNow = (dateString) => {
   const now = dayjs();
   const date = dayjs(dateString);
   

@@ -1,16 +1,10 @@
 import React from 'react';
 import './LoadingSpinner.sass';
 
-interface LoadingSpinnerProps {
-  size?: 'small' | 'medium' | 'large';
-  color?: string;
-  className?: string;
-}
-
 /**
  * A reusable loading spinner component
  */
-export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
+export const LoadingSpinner = ({
   size = 'medium',
   color = 'primary',
   className = '',

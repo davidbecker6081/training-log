@@ -1,32 +1,26 @@
 import React, { useState } from 'react';
 import { usePeakForces } from '../../hooks';
-import { PeakForce } from '../../types';
 import { LoadingSpinner, ErrorMessage, PeakForceCard } from '../../components';
 import { sortPeakForcesByDate } from '../../utils';
 import './PeakForceList.sass';
 
-interface PeakForceListProps {
-  onSelectPeakForce?: (peakForce: PeakForce) => void;
-  className?: string;
-}
-
 /**
  * A view component to display a list of peak forces
  */
-export const PeakForceList: React.FC<PeakForceListProps> = ({
+export const PeakForceList = ({
   onSelectPeakForce,
   className = '',
 }) => {
   const { data: peakForces, isLoading, error, refetch } = usePeakForces();
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'highest'>('newest');
+  const [sortOrder, setSortOrder] = useState('newest');
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortOrder(e.target.value as 'newest' | 'oldest' | 'highest');
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value);
   };
 
   // Filter peak forces based on search term

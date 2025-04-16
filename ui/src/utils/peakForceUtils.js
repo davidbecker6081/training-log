@@ -1,12 +1,10 @@
-import { PeakForce } from '../types';
-
 /**
  * Format a peak force value with its unit
  * @param value - The peak force value
  * @param unit - The unit of measurement
  * @returns The formatted peak force string
  */
-export const formatPeakForce = (value: number, unit: string): string => {
+export const formatPeakForce = (value, unit) => {
   return `${value.toFixed(1)} ${unit}`;
 };
 
@@ -16,7 +14,7 @@ export const formatPeakForce = (value: number, unit: string): string => {
  * @param rightMax - The right peak force value
  * @returns The absolute difference
  */
-export const calculateDifference = (leftMax: number, rightMax: number): number => {
+export const calculateDifference = (leftMax, rightMax) => {
   return Math.abs(leftMax - rightMax);
 };
 
@@ -26,7 +24,7 @@ export const calculateDifference = (leftMax: number, rightMax: number): number =
  * @param rightMax - The right peak force value
  * @returns The percentage difference
  */
-export const calculatePercentageDifference = (leftMax: number, rightMax: number): number => {
+export const calculatePercentageDifference = (leftMax, rightMax) => {
   const max = Math.max(leftMax, rightMax);
   const min = Math.min(leftMax, rightMax);
   return ((max - min) / max) * 100;
@@ -40,10 +38,10 @@ export const calculatePercentageDifference = (leftMax: number, rightMax: number)
  * @returns True if there is a significant imbalance, false otherwise
  */
 export const hasSignificantImbalance = (
-  leftMax: number, 
-  rightMax: number, 
+  leftMax, 
+  rightMax, 
   threshold = 10
-): boolean => {
+) => {
   return calculatePercentageDifference(leftMax, rightMax) > threshold;
 };
 
@@ -53,7 +51,7 @@ export const hasSignificantImbalance = (
  * @param rightMax - The right peak force value
  * @returns 'left', 'right', or 'equal'
  */
-export const getStrongerSide = (leftMax: number, rightMax: number): 'left' | 'right' | 'equal' => {
+export const getStrongerSide = (leftMax, rightMax) => {
   if (leftMax > rightMax) return 'left';
   if (rightMax > leftMax) return 'right';
   return 'equal';
@@ -64,7 +62,7 @@ export const getStrongerSide = (leftMax: number, rightMax: number): 'left' | 'ri
  * @param peakForces - The array of peak forces to sort
  * @returns The sorted array
  */
-export const sortPeakForcesByDate = (peakForces: PeakForce[]): PeakForce[] => {
+export const sortPeakForcesByDate = (peakForces) => {
   return [...peakForces].sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });

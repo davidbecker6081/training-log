@@ -2,31 +2,25 @@ import React, { useState } from 'react';
 import { WorkoutList } from '../WorkoutList/WorkoutList';
 import { PeakForceList } from '../PeakForceList/PeakForceList';
 import { CustomDropzone } from '../../components';
-import { Workout, PeakForce } from '../../types';
 import './Dashboard.sass';
-
-interface DashboardProps {
-  userId: number;
-  className?: string;
-}
 
 /**
  * A view component that serves as the main dashboard for the application
  */
-export const Dashboard: React.FC<DashboardProps> = ({
+export const Dashboard = ({
   userId,
   className = '',
 }) => {
-  const [activeTab, setActiveTab] = useState<'workouts' | 'peakForces'>('workouts');
-  const [selectedWorkout, setSelectedWorkout] = useState<Workout | null>(null);
-  const [selectedPeakForce, setSelectedPeakForce] = useState<PeakForce | null>(null);
+  const [activeTab, setActiveTab] = useState('workouts');
+  const [selectedWorkout, setSelectedWorkout] = useState(null);
+  const [selectedPeakForce, setSelectedPeakForce] = useState(null);
 
-  const handleWorkoutSelect = (workout: Workout) => {
+  const handleWorkoutSelect = (workout) => {
     setSelectedWorkout(workout);
     // Additional logic for when a workout is selected could go here
   };
 
-  const handlePeakForceSelect = (peakForce: PeakForce) => {
+  const handlePeakForceSelect = (peakForce) => {
     setSelectedPeakForce(peakForce);
     // Additional logic for when a peak force is selected could go here
   };

@@ -1,18 +1,11 @@
 import React from 'react';
-import { Workout } from '../../types';
 import { formatDate } from '../../utils';
 import './WorkoutCard.sass';
-
-interface WorkoutCardProps {
-  workout: Workout;
-  onClick?: (workout: Workout) => void;
-  className?: string;
-}
 
 /**
  * A card component to display workout information
  */
-export const WorkoutCard: React.FC<WorkoutCardProps> = ({
+export const WorkoutCard = ({
   workout,
   onClick,
   className = '',

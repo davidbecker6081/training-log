@@ -1,5 +1,4 @@
 import React from 'react';
-import { PeakForce } from '../../types';
 import { 
   formatDate, 
   formatPeakForce, 
@@ -9,16 +8,10 @@ import {
 } from '../../utils';
 import './PeakForceCard.sass';
 
-interface PeakForceCardProps {
-  peakForce: PeakForce;
-  onClick?: (peakForce: PeakForce) => void;
-  className?: string;
-}
-
 /**
  * A card component to display peak force information
  */
-export const PeakForceCard: React.FC<PeakForceCardProps> = ({
+export const PeakForceCard = ({
   peakForce,
   onClick,
   className = '',
