@@ -7,10 +7,8 @@ const store = configureStore({
   reducer: {
     // Add the api reducer to the store
     [api.reducerPath]: api.reducer,
-    // Add the existing reducers
-    workouts: rootReducer.workouts,
-    peakForces: rootReducer.peakForces,
-    user: rootReducer.user,
+    // Add the existing reducers from the combined rootReducer
+    ...rootReducer,
   },
   // Enable Redux DevTools
   devTools: process.env.NODE_ENV !== 'production',
