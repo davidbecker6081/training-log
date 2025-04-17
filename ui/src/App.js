@@ -1,6 +1,6 @@
 import './styles/main.sass';
 import React from 'react';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Dashboard, NotFound } from './views';
 import { Navigation } from './components';
 
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/dashboard" element={<Dashboard userId={userId} />} />
             {/* Redirect root to dashboard */}
-            {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
             {/* Catch-all route - redirect to 404 */}
             <Route path="/*" element={<NotFound />} />
           </Routes>
