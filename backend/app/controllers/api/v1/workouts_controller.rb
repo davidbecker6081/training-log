@@ -18,6 +18,7 @@ class Api::V1::WorkoutsController < ApplicationController
         workout = @user.workouts.build(workout_params)
 
         if workout.save
+            @user.user_workouts.create(workout_id: workout.id)
             render json: workout, status: :created
         else
             render json: {

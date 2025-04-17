@@ -5,7 +5,10 @@ import {
   FETCH_WORKOUTS_FAILURE,
   FETCH_WORKOUT_REQUEST,
   FETCH_WORKOUT_SUCCESS,
-  FETCH_WORKOUT_FAILURE
+  FETCH_WORKOUT_FAILURE,
+  ADD_WORKOUT_REQUEST,
+  ADD_WORKOUT_SUCCESS,
+  ADD_WORKOUT_FAILURE
 } from '../actions/types';
 
 // Initial state
@@ -57,6 +60,25 @@ const workoutsReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload
       };
+    case ADD_WORKOUT_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    case ADD_WORKOUT_SUCCESS:
+      return {
+        ...state,
+        workouts: [...state.workouts, action.payload],
+        loading: false,
+        error: null
+      }
+    case ADD_WORKOUT_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      }
     default:
       return state;
   }

@@ -1,20 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { createStore, applyMiddleware, compose } from 'redux';
+import {thunk} from 'redux-thunk';
 import rootReducer from './reducers';
-import { api } from './services/api';
 
-// Create the Redux store with Redux Toolkit
-const store = configureStore({
-  reducer: {
-    // Add the api reducer to the store
-    [api.reducerPath]: api.reducer,
-    // Add the existing reducers from the combined rootReducer
-    ...rootReducer,
-  },
-  // Enable Redux DevTools
-  devTools: process.env.NODE_ENV !== 'production',
-  // Add middleware - Redux Toolkit includes thunk by default
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(api.middleware),
-});
+// Enable Redux DevTools Extension
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// Create the Redux store with thunk middleware
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
+);
 
 export default store;
