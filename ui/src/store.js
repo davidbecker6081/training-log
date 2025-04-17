@@ -1,14 +1,22 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { thunk } from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './reducers';
+import { api } from './services/api';
 
-// Setup Redux DevTools if available
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-// Create the Redux store
-const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
-);
+// Create the Redux store with Redux Toolkit
+const store = configureStore({
+  reducer: {
+    // Add the api reducer to the store
+    [api.reducerPath]: api.reducer,
+    // Add the existing reducers
+    workouts: rootReducer.workouts,
+    peakForces: rootReducer.peakForces,
+    user: rootReducer.user,
+  },
+  // Enable Redux DevTools
+  devTools: process.env.NODE_ENV !== 'production',
+  // Add middleware - Redux Toolkit includes thunk by default
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(api.middleware),
+});
 
 export default store;
