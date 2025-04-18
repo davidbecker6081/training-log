@@ -1,4 +1,8 @@
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+
+// Extend dayjs with UTC plugin
+dayjs.extend(utc);
 
 /**
  * Format a date string to a human-readable format
@@ -7,7 +11,7 @@ import dayjs from 'dayjs';
  * @returns The formatted date string
  */
 export const formatDate = (dateString, format = 'MMM D, YYYY') => {
-  return dayjs(dateString).format(format);
+  return dayjs.utc(dateString).local().format(format);
 };
 
 /**
@@ -17,7 +21,7 @@ export const formatDate = (dateString, format = 'MMM D, YYYY') => {
  * @returns The formatted date string with time
  */
 export const formatDateTime = (dateString, format = 'MMM D, YYYY h:mm A') => {
-  return dayjs(dateString).format(format);
+  return dayjs.utc(dateString).local().format(format);
 };
 
 /**
@@ -26,7 +30,7 @@ export const formatDateTime = (dateString, format = 'MMM D, YYYY h:mm A') => {
  * @returns True if the date is today, false otherwise
  */
 export const isToday = (dateString) => {
-  return dayjs(dateString).isSame(dayjs(), 'day');
+  return dayjs.utc(dateString).local().isSame(dayjs(), 'day');
 };
 
 /**
@@ -36,7 +40,7 @@ export const isToday = (dateString) => {
  */
 export const fromNow = (dateString) => {
   const now = dayjs();
-  const date = dayjs(dateString);
+  const date = dayjs.utc(dateString).local();
   
   const diffDays = now.diff(date, 'day');
   

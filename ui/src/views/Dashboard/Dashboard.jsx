@@ -17,7 +17,6 @@ export const Dashboard = ({
   const dispatch = useDispatch();
 
   const { modals } = useSelector((state) => state.modals);
-  console.log(modals)
 
   const [activeTab, setActiveTab] = useState('workouts');
   const [selectedWorkout, setSelectedWorkout] = useState(null);

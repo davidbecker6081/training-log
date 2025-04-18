@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatDate } from '../../utils';
+import { formatDateTime } from '../../utils';
 import './WorkoutCard.sass';
 
 /**
@@ -24,7 +24,7 @@ export const WorkoutCard = ({
       <div className="card-content">
         <div className="workout-header">
           <h3 className="title is-5">{workout.name}</h3>
-          <span className="tag is-primary is-light">{formatDate(workout.date)}</span>
+          <span className="tag is-primary is-light">{formatDateTime(workout.date)}</span>
         </div>
         
         {workout.description && (

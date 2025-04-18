@@ -1,4 +1,4 @@
-import { CustomButton } from '..';
+import { CustomButton } from '../CustomButton/CustomButton';
 import { IoMdAdd } from "react-icons/io";
 
 export const AddWorkoutButton = ({ onClick, disabled, isIconRight, label }) => {

@@ -11,12 +11,12 @@ export const ErrorMessage = ({
 }) => {
   if (!error) return null;
 
-  const errorMessage = 'message' in error ? error.message : String(error);
+  // const errorMessage = 'message' in error ? error.message : String(error);
 
   return (
     <div className={`error-message notification is-danger ${className}`}>
       <div className="error-content">
-        <p className="error-text">{errorMessage}</p>
+        <p className="error-text">Error</p>
         {onRetry && (
           <button
             className="button is-small is-light"
@@ -28,7 +28,7 @@ export const ErrorMessage = ({
         )}
       </div>
       
-      {/* If there are additional error details, show them */}
+      {/* If there are additional error details, show them
       {'errors' in error && error.errors && (
         <ul className="error-details">
           {Object.entries(error.errors).map(([field, messages]) => (
@@ -37,7 +37,7 @@ export const ErrorMessage = ({
             </li>
           ))}
         </ul>
-      )}
+      )} */}
     </div>
   );
 };

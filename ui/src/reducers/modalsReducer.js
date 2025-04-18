@@ -19,7 +19,7 @@ const modalsReducer = (state = initalState, action) => {
         case CLOSE_MODAL:
             return {
                 ...state,
-                modals: state.modals.filter(m => m.id !== action.payload)
+                modals: state.modals.filter(m => m !== action.payload)
             }
         case LOADING_MODAL:
             return {

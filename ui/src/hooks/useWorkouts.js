@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchWorkouts, fetchWorkout } from '../actions/workoutActions';
+import { fetchWorkouts, fetchWorkout, addWorkout, closeModal } from '../actions';
 
 /**
  * Custom hook to fetch workouts for a specific user
- */
+*/
 export const useWorkouts = ({ userId, enabled = true }) => {
   const dispatch = useDispatch();
   const { workouts, loading, error } = useSelector(state => state.workouts);
@@ -28,6 +28,7 @@ export const useWorkouts = ({ userId, enabled = true }) => {
  */
 export const useWorkout = (workoutId, enabled = true) => {
   const dispatch = useDispatch();
+
   const { currentWorkout, loading, error } = useSelector(state => state.workouts);
 
   useEffect(() => {
@@ -41,5 +42,29 @@ export const useWorkout = (workoutId, enabled = true) => {
     isLoading: loading,
     error,
     refetch: () => dispatch(fetchWorkout(workoutId))
+  };
+};
+
+export const useCreateWorkout = (userId, modalType) => {
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector(state => state.workouts);
+
+  const createWorkout = async (workoutData) => {
+    try {
+      await dispatch(addWorkout(userId, workoutData));
+      if (modalType) {
+        dispatch(closeModal(modalType));
+      }
+      return true;
+    } catch (error) {
+      console.error('Error adding workout:', error);
+      return false;
+    }
+  };
+
+  return {
+    createWorkout,
+    isLoading: loading,
+    error
   };
 };

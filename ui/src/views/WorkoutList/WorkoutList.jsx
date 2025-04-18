@@ -23,6 +23,8 @@ export const WorkoutList = ({
     (workout.description && workout.description.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
+  const sortedWorkouts = filteredWorkouts.sort((a, b) => a.date > b.date ? -1 : 1)
+
   return (
     <div className={`workout-list ${className}`}>
       <div className="workout-list-header">
@@ -48,9 +50,9 @@ export const WorkoutList = ({
         <LoadingSpinner />
       ) : error ? (
         <ErrorMessage error={error} onRetry={refetch} />
-      ) : filteredWorkouts && filteredWorkouts.length > 0 ? (
+      ) : sortedWorkouts && sortedWorkouts.length > 0 ? (
         <div className="workout-cards">
-          {filteredWorkouts.map(workout => (
+          {sortedWorkouts.map(workout => (
             <WorkoutCard
               key={workout.id}
               workout={workout}
