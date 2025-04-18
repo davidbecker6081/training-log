@@ -5,4 +5,5 @@ export * from './PeakForceCard/PeakForceCard';
 export * from './CustomDropzone/CustomDropzone';
 export * from './Navigation/Navigation';
 export * from './CustomButton/CustomButton';
-export * from './AddButton/AddButton';
+export * from './AddWorkoutButton/AddWorkoutButton';
+export * from './AddWorkoutModal/AddWorkoutModal';
