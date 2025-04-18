@@ -21,4 +21,6 @@ class Workout < ApplicationRecord
 
     has_many :user_workouts
     has_many :users, through: :user_workouts
+
+    validates :name, :description, length: { minimum: 3, maximum: 256 }
 end
